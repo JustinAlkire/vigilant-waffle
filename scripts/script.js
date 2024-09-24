@@ -1,13 +1,19 @@
-$("#btnGetAnimal").on("click", function() {
-  // Get username
-  let bakerName = $("#bakerName").val();
+// $('body').css("background-color", "yellow");
 
-  // Generate a random spirit animal
-  let randomAnimal = spiritAnimals[Math.floor(Math.random() * spiritAnimals.length)];
+// when button is clicked
+//IIFE = immediately invoked f/n expression 
+$("#btnGetAnimal").on("click", function(){
+  //get the user name
+  let bakerName = $("#bakerName").val(); 
+  //var variableName =  ... let (const) 
+  
+  $("#greetingArea").text("Hi there, " + bakerName + "!");  
+  //give them a personalized greeting
+  
+  let randomAnimal = spiritAnimals[(Math.floor(Math.random() * spiritAnimals.length))];
+  
+  $("#animalArea").text("Your spirit animal is: " + randomAnimal)
+  //next, also tell spirit animal 
+} )
 
-  // Update the greeting area with both the greeting and the spirit animal
-  $("#greetingArea").text("Hi there, " + bakerName + ". Your spirit animal is: " + randomAnimal);
-});
-
-// List of spirit animals
-let spiritAnimals = ["🐈", "🦆", "👾"];
+let spiritAnimals = ["🦅","🌵","🐟","🐛","👾","🦆","file not found"]
